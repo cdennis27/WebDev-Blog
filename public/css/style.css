@@ -496,6 +496,7 @@ body {
 
 .full-wide p {
     width: 100%;
+    margin-right: 3vw;
 }
 
 .footer {
