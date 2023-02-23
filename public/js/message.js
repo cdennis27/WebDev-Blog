@@ -6,7 +6,7 @@ const addComment = async (event) => {
     const userid = event.target.dataset.userid;
     const message = document.querySelector('#comment-box').value.trim();
     
-    console.log(commentid + " MESSAGE SAVE " + message);
+    //console.log(commentid + " MESSAGE SAVE " + message);
     
     if(!message) {
         message = document.querySelector(`board${commentid}`).value.trim();

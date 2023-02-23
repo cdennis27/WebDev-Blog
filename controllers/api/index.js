@@ -3,7 +3,6 @@ const userRoutes = require('./userRoutes');
 const commentRoutes = require('./commentRoutes');
 const messageRoutes = require('./messageRoutes');
 
-
 //api routes
 router.use('/users', userRoutes);
 router.use('/comments', commentRoutes);

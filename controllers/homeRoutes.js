@@ -17,8 +17,8 @@ router.get('/', async (req, res) => {
                 }
             ],
         });
-        
-console.log(carData);
+
+        //console.log(carData);
 
         const comments = carData.map((comment) => comment.get({ plain: true }));
 
@@ -35,12 +35,12 @@ console.log(carData);
 router.get('/login', (req, res) => {
 
     if (req.session.logged_in) {
-      res.redirect('/');
-      return;
+        res.redirect('/');
+        return;
     }
-  
+
     res.render('login');
-  });
+});
 
 router.get('/board/:id', async (req, res) => {
     try {
@@ -57,10 +57,10 @@ router.get('/board/:id', async (req, res) => {
             ],
         });
 
-        console.log(commentData);
+        //console.log(commentData);
 
         const comment = commentData.get({ plain: true });
-        
+
         res.render('board', {
             ...comment,
             logged_in: req.session.logged_in,
@@ -80,14 +80,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
         });
 
         const user = userData.get({ plain: true });
-        console.log(`aUseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeer`);
-        console.log(user);
-        console.log(user.comments.length);
-        
-
-        
-        console.log(`Testingggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg`);
-            
 
         res.render('dashboard', {
             ...user,
@@ -115,10 +107,10 @@ router.get('/edit/:id', withAuth, async (req, res) => {
             ],
         });
 
-        console.log(commentData);
+        //console.log(commentData);
 
         const comment = commentData.get({ plain: true });
-        
+
         res.render('edit', {
             ...comment,
             logged_in: req.session.logged_in,

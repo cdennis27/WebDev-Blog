@@ -15,7 +15,7 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
-  console.log(users);
+  //console.log(users);
   for (const comment of commentData) {
     await Comment.create({
       ...comment,

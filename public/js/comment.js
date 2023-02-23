@@ -5,7 +5,7 @@ const addBoard = async (event) => {
     const userid = event.target.dataset.userid;
     const title = document.querySelector('#board-title').value.trim();
     const message = document.querySelector('#board-message').value.trim();
-    console.log("Comment.js = " + user_name + " " + message + " " + title + " " + userid + " ");
+    //console.log("Comment.js = " + user_name + " " + message + " " + title + " " + userid + " ");
 
     if (message && title) {
 

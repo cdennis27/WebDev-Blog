@@ -42,9 +42,7 @@ const delButtonHandler = async (event) => {
     const response = await fetch(`/api/comments/${id}`, {
       method: 'DELETE',
     });
-    console.log(`responseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee`);
-    console.log(response);
-
+    
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
