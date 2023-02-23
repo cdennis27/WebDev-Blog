@@ -1,3 +1,9 @@
+<div class="home-banner">
+    <h1>WebDevs Blog</h1>
+    <p>
+        Dashboard
+    </p>
+</div>
 <section class="section-comments">
     {{#if comments.length}}
     {{#each comments as |comment| }}
@@ -23,13 +29,19 @@
                     type="text"></textarea>
             </form>
         </div>
+        <div class="comment-footer">
+            <a href="/edit/{{comment.id}}" class="add-comment-btn btn">Edit Board</a>
+            <a href="/edit/{{comment.id}}" class="comments-length"></a>
+        
+        </div>
     </div>
     {{/each}}
     {{/if}}
     <div class="board-box">
 
         <form class="board-form form-inline" data-user_name="{{req.session.userName}}">
-            <button data-user_id={{user.id}} type="submit" id="submit-board" class="submit-board btn ">New Board</button>
+            <button data-user_id={{user.id}} type="submit" id="submit-board" class="submit-board btn ">New
+                Board</button>
             <a href="" class="comments-length"></a>
             <p>Title:</p>
             <textarea class="text-box" id="board-title" placeholder="Title here" rows="3" type="text"></textarea>

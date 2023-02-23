@@ -1,22 +1,21 @@
 const addBoard = async (event) => {
     event.preventDefault();
-    
-    const user_name = event.target.dataset.user_name;
-    const userid = event.target.dataset.userid;
+        
+    //console.log(event.target.dataset.id);
+    const commentid = event.target.dataset.id;
     const title = document.querySelector('#board-title').value.trim();
     const message = document.querySelector('#board-message').value.trim();
-    console.log("Comment.js = " + user_name + " " + message + " " + title + " " + userid + " ");
-
+        
     if (message && title) {
 
-        const response = await fetch('/api/comments', {
-            method: 'POST',
+        const response = await fetch(`/api/comments/${commentid}`, {
+            method: 'PUT',
             body: JSON.stringify({ message, title }),
             headers: {
                 'Content-Type': 'application/json',
             },
         });
-        
+
         if (response.ok) {
             document.location.replace(`/dashboard`);
         } else {

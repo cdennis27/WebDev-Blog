@@ -1,0 +1,22 @@
+<div class="home-banner">
+    <h1>WebDevs Blog</h1>
+    <p>
+        Edit your board header
+    </p>
+</div>
+
+<div class="board-box">
+
+    <form class="board-form form-inline" data-id="{{id}}">
+        <button data-id={{id}} type="submit" id="submit-board" class="submit-board btn ">Update Board</button>
+        <a href="" class="comments-length"></a>
+        <p>Title: </p>
+        <textarea class="text-box" id="board-title" placeholder="{{title}}" rows="3" type="text"></textarea>
+        <p>Comment: </p>
+        <textarea class="text-box" id="board-message" placeholder="{{message}}" rows="3" type="text"></textarea>
+    </form>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="/js/edit.js"></script>

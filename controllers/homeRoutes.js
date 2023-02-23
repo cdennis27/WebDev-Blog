@@ -100,9 +100,35 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
+router.get('/edit/:id', withAuth, async (req, res) => {
+    try {
+        const commentData = await Comment.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                },
+                {
+                    model: Message,
+                    attributes: ['id', 'message', 'date_created', 'commentid', 'userid', 'user_name'],
+                }
+            ],
+        });
 
+        console.log(commentData);
 
+        const comment = commentData.get({ plain: true });
+        
+        res.render('edit', {
+            ...comment,
+            logged_in: req.session.logged_in,
+            session_username: req.session.username,
 
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 
 
