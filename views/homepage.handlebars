@@ -1,0 +1,32 @@
+<div class="home-banner">
+    <h1>WebDevs Blog</h1>
+    <p>
+        Place to share opinions and experiences about website development
+    </p>
+</div>
+
+<section class="section-comments">
+
+    {{#each comments as |comment| }}
+
+    <div class="comment-box">
+        <a href="/board/{{comment.id}}" class="comment-header">
+            <h2>{{comment.title}}</h2>
+            <p>Posted by <span>{{comment.user_name}}</span> on {{format_date date_created }}</p>
+        </a>
+        <a href="/board/{{comment.id}}" class="comment-message">
+            <p>
+                {{comment.message}}
+            </p>
+        </a>
+        <div class="comment-footer">
+            <a href="/board/{{comment.id}}" class="add-comment-btn btn">All comments</a>
+            <a href="../board.html" class="comments-length">Comments: {{messages.length}}</a>
+        </div>
+    </div>
+    {{/each}}
+
+
+
+
+</section>

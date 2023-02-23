@@ -1,0 +1,50 @@
+<section class="section-comments">
+
+    <div class="comment-box">
+        <a href="/board/{{id}}" class="comment-header">
+            <h2>{{title}}</h2>
+            <p>Posted by <span>{{user_name}}</span> on {{format_date date_created }}</p>
+        </a>
+        <a href="/board/{{id}}" class="comment-message">
+            <p>
+                {{message}}
+            </p>
+        </a>
+
+        {{#if logged_in}}
+        <div class="comment-input">
+            <form class="comment-form form-inline" data-comment_id={{id}} data-user_name="{{req.session.userName}}">
+                <button type="submit" id="submit-comment" class="submit-comment btn">Add Comments</button>
+                <a href="" class="comments-length">Comments: {{messages.length}}</a>
+                <textarea class="text-box" id="comment-box" placeholder="Comment here" rows="3" type="text"></textarea>
+            </form>
+        </div>
+        {{else}}
+        <div class="comment-input left">
+
+            <a href="/login" id="submit-comment" class="submit-comment btn">Login to add Comment</a>
+        </div {{/if}} <div class="comment-footer" data-comment_id={{id}}>
+        
+    </div>
+    </div>
+
+    {{#each messages as |message| }}
+
+    <div class="comment-box">
+
+        <a href="" class="comment-message">
+            <p>
+                {{message.message}}
+            </p>
+            <a href="" class="comment-header full-wide">
+                <p>Posted by <span>{{user_name}}</span> on {{format_date date_created }}</p>
+            </a>
+        </a>
+
+    </div>
+
+    {{/each}}
+
+</section>
+
+<script src="/js/message.js"></script>

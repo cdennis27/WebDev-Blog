@@ -1,0 +1,50 @@
+<section class="section-comments">
+    {{#if comments.length}}
+    {{#each comments as |comment| }}
+    <div class="comment-box ">
+        <a class="comment-header">
+            <h2>{{comment.title}}</h2>
+            <p>Posted by <span>{{comment.user_name}}</span> on {{format_date date_created }}</p>
+            <button data-id={{comment.id}} onclick="delButtonHandler(event)" class="delete-board btn">
+                X
+            </button>
+        </a>
+        <a href="/board/{{comment.id}}" class="comment-message">
+            <p>
+                {{comment.message}}
+            </p>
+        </a>
+        <div class="comment-input">
+            <form class="comment-form form-inline" data-comment_id={{id}} data-user_name="{{req.session.userName}}">
+                <button data-comment_id={{id}} type="submit" id="submit-comment" class="submit-comment btn ">Add
+                    Comments</button>
+                <a href="/board/{{comment.id}}" class="comments-length">Comments: {{messages.length}}</a>
+                <textarea class="text-box board{{id}}" id="comment-box" placeholder="Comment here" rows="3"
+                    type="text"></textarea>
+            </form>
+        </div>
+    </div>
+    {{/each}}
+    {{/if}}
+    <div class="board-box">
+
+        <form class="board-form form-inline" data-user_name="{{req.session.userName}}">
+            <button data-user_id={{user.id}} type="submit" id="submit-board" class="submit-board btn ">New Board</button>
+            <a href="" class="comments-length"></a>
+            <p>Title:</p>
+            <textarea class="text-box" id="board-title" placeholder="Title here" rows="3" type="text"></textarea>
+            <p>Comment:</p>
+            <textarea class="text-box" id="board-message" placeholder="Comment here" rows="3" type="text"></textarea>
+        </form>
+
+    </div>
+
+
+
+
+
+</section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="/js/dashboard.js"></script>
+<script src="/js/comment.js"></script>

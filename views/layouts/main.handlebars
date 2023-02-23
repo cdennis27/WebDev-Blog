@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDevs Blog</title>
+    <link rel="icon" type="icon" href="/images/logoWithoutText.png">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+    <header class="header-bar">
+        <a href="/" class="home-btn">
+            Home
+        </a>
+        {{#if logged_in}}
+        <a href="/dashboard" class="dash-btn">
+            Dashboard
+        </a>
+        {{else}}
+        <a href="/login" class="dash-btn">
+            Dashboard
+        </a>
+        {{/if}}
+        <a href="/" class="date">
+            February 17 ,2023
+        </a>
+        {{#if logged_in}}
+        <div class="logged-in">
+            <a id="logout" class="login-button btn">
+                {{session_username}} Log out
+            </a>
+        </div>
+        {{else}}
+        <div class="logged-in">
+            <a href="/login" class="login-button btn">
+                Login / Register
+            </a>
+        </div>
+        {{/if}}
+    </header>
+
+    <main class="container">
+        {{{ body }}}
+    </main>
+
+    <footer class="footer">
+        <h2>Contact information</h2>
+        <div class="footerLinks">
+            <a href="https://github.com/cdennis27" class="links">Cezar</a>
+        </div>
+
+    </footer>
+    </div>
+
+
+
+
+
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+
+</body>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
