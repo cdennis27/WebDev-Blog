@@ -1,6 +1,6 @@
 const addComment = async (event) => {
     event.preventDefault();
-   debugger;
+   
     const commentid = event.target.dataset.comment_id;
     const user_name = event.target.dataset.user_name;
     const userid = event.target.dataset.userid;
