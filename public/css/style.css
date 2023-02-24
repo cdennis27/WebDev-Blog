@@ -659,6 +659,10 @@ body {
         align-items: normal;
         
     }
+    .comment-footer {
+        width: 100%;
+        
+    }
     .delete-board {
         align-self: right;
     }
@@ -687,6 +691,10 @@ body {
     .home-btn, .dash-btn {
         
         padding: 0 0 0 2px;
+    }
+    .comments-length {
+        padding: 0 0 0 5px;
+        text-align: right;
     }
 
     
