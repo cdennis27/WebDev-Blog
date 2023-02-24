@@ -562,6 +562,9 @@ body {
         font-size: 1rem;
         width: 50%;
     }
+    .comments-length {
+        padding: 0 0 0 5px;
+    }
     .x {
         font-size: 1rem;
         width: 100%;
@@ -680,6 +683,10 @@ body {
     .form-group button {
         font-size: 1rem;
         width: 50%;
+    }
+    .home-btn, .dash-btn {
+        
+        padding: 0 0 0 2px;
     }
 
     
