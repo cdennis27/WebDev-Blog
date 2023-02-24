@@ -651,6 +651,7 @@ body {
     .comment-header h2 {
         font-size: .9rem;
         text-align: center;
+        padding: 0 0 10px 0;
     }
     .comment-message {
         font-size: .8rem;
