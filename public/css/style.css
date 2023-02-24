@@ -650,6 +650,7 @@ body {
     }
     .comment-header h2 {
         font-size: .9rem;
+        text-align: center;
     }
     .comment-message {
         font-size: .8rem;
